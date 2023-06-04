@@ -163,19 +163,42 @@ header .fa-bars {
   min-height: 100vh;
   align-items: center;
   padding-top: 8rem;
+  position: relative;
 }
 
-.home .image {
-  flex: 1 1 40rem;
-}
-
-.home .image img {
+.home .homevideo {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  z-index: -1;
 }
+
+
+.home .container {
+  text-align: center;
+  color: #fff;
+}
+
 
 .home .content {
-  flex: 1 1 40rem;
+  position: relative;
+  z-index: 1;
 }
+
+.home .content:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backdrop-filter: blur(50px); 
+  z-index: -1;
+}
+
 
 .home .content h1 {
   font-size: 5rem;
@@ -188,12 +211,13 @@ header .fa-bars {
 
 .home .content h3 {
   font-size: 4rem;
-  color: var(--black);
+  color: white;
 }
 
 .home .content p {
   font-size: 2.5rem;
-  color: var(--black);
+  display: inline-block;
+  color: white;
 }
 
 
@@ -205,6 +229,34 @@ header .fa-bars {
 .lead {
   font-size: medium;
 }
+
+#contentabout {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+}
+
+#contentabout h2 {
+  font-style: bold;
+  color: white;
+}
+
+#contentabout p {
+  font-size: 1.8rem;
+  font-style: bold;
+  color: black;
+}
+
+#contentabout:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backdrop-filter: blur(5px); 
+  z-index: -1;
+} 
+
 
 .card {
   border: none;
@@ -219,6 +271,12 @@ header .fa-bars {
   .card {
     min-height: 350px;
   }
+
+  #contentabout h2 {
+    font-style: bold;
+    color: black;
+  }
+
 }
 
 @media (max-width: 420px) {
@@ -270,6 +328,10 @@ header .fa-bars {
   opacity: 100;
 }
 
+.card.card-has-bg:hover .card-img-overlay .btnest {
+  opacity: 100;
+}
+
 .card-footer {
   background: none;
   border-top: none;
@@ -307,6 +369,14 @@ header .fa-bars {
   color: white;
   font-size: medium;
   opacity: 0;
+}
+
+.card-img-overlay .btnest {
+  opacity: 0;
+  color: white;
+  font-size: 1.5rem;
+  background-color: var(--blue);
+  backdrop-filter: blur(10px);
 }
 
 @media (max-width: 767px) {
@@ -410,6 +480,7 @@ table {
     color: white;
   }
 
+  
 }
 
 .accordion .accordion-item {
@@ -426,7 +497,7 @@ table {
   text-align: left;
   width: 100%;
   padding: 1em 0;
-  color: var(--text);
+  color: var(--black);
   font-size: 2.5rem;
   font-weight: 400;
   border: none;
@@ -437,13 +508,13 @@ table {
 .accordion button:hover,
 .accordion button:focus {
   cursor: pointer;
-  color: var(--blue);
+  color: var(--black);
 }
 
 .accordion button:hover::after,
 .accordion button:focus::after {
   cursor: pointer;
-  color: var(--blue);
+  color: var(--black);
   border: 1px solid var(--blue);
 }
 
@@ -485,7 +556,7 @@ table {
 }
 
 .accordion button[aria-expanded='true'] {
-  color: var(--blue);
+  color: var(--black);
 }
 
 .accordion button[aria-expanded='true'] .icon::after {
@@ -523,27 +594,36 @@ table {
 }
 
 .formst {
-  max-width: 500px; /* Ajusta el ancho máximo del formulario */
-  margin: 0 auto; /* Centra el formulario horizontalmente */
+  max-width: 500px;
+  /* Ajusta el ancho máximo del formulario */
+  margin: 0 auto;
+  /* Centra el formulario horizontalmente */
 }
 
 .form-control {
-  width: 100%; /* Ajusta el ancho del form-control al 100% del contenedor */
-  padding: 50px; /* Ajusta el relleno (padding) para dar más espacio alrededor del input */
-  font-size: 16px; /* Ajusta el tamaño de fuente del input */
+  width: 100%;
+  /* Ajusta el ancho del form-control al 100% del contenedor */
+  padding: 50px;
+  /* Ajusta el relleno (padding) para dar más espacio alrededor del input */
+  font-size: 16px;
+  /* Ajusta el tamaño de fuente del input */
 }
 
 .btn-block {
-  padding: 12px 0; /* Aumenta el padding vertical del botón */
-  font-size: 18px; /* Aumenta el tamaño de fuente del botón */
+  padding: 12px 0;
+  /* Aumenta el padding vertical del botón */
+  font-size: 18px;
+  /* Aumenta el tamaño de fuente del botón */
 }
 
 .form-group {
-  width: 100%; /* Establece el ancho del form-group al 100% del contenedor */
+  width: 100%;
+  /* Establece el ancho del form-group al 100% del contenedor */
 }
 
 .input-group-prepend {
-  width: 15%; /* Ajusta el ancho del input-group-prepend al 15% del contenedor */
+  width: 15%;
+  /* Ajusta el ancho del input-group-prepend al 15% del contenedor */
 }
 
 .formcontainer {
@@ -664,10 +744,25 @@ header .fa-times {
 
   .home .content h1 {
     font-size: 4rem;
+    color: var(--black);
   }
 
   .home .content h3 {
     font-size: 3rem;
+    color: var(--black);
+  }
+
+  .home .content p {
+    
+    color: var(--black);
+  }
+
+  .home .homevideo {
+    display: none;
+  }
+
+  #about .container #contentabout {
+    color: var(--black);
   }
 
   .footer .credit {
@@ -682,4 +777,99 @@ header .fa-times {
     font-size: 50%;
   }
 
+}
+
+.breadcrumbs {
+  padding: 15px 0;
+  background: #f3f5fa;
+  min-height: 40px;
+  margin-top: 72px;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 68px;
+  }
+
+  .containerinfo img {
+    opacity: 0;
+  }
+  
+  
+  .container404 {
+    width: auto;
+      
+  }
+
+}
+
+.breadcrumbs h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #37517e;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #4668a2;
+  content: "/";
+}
+
+.containerinfo {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Ajusta la altura según sea necesario */
+}
+
+.containerinfo p {
+  padding-top: 2%;
+  padding-right: 22%;
+  padding-left: 22%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.containerinfo img {
+  position: fixed;
+  width: 30%;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.container404 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.privacy-policy {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
 }

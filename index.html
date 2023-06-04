@@ -5,11 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechFix Solutions</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -32,18 +27,18 @@
     </header>
 
     <section class="home" id="home">
+        <div class="homevideo" data-aos="zoom-in">
+            <video width="100%" autoplay loop muted id="video-background">
+                <source src="images/homevideogirl.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
         <div class="container">
             <div class="flex text-center text-md-left">
-                <div class="image" data-aos="zoom-in">
-                    <video width="100%" autoplay loop>
-                        <source src="images/homeVideoOne.mp4" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
-                </div>
                 <div class="content" data-aos="fade-left">
-                    <h1>Reparación y Venta de Computadoras y Equipo Electrónico</h1>
-                    <p>Ofrecemos servicios de reparación y venta de computadoras y equipo electrónico, con la
-                        confiabilidad y calidad que necesitas</p>
+                    <h1>Reparación y Venta de Computadoras</h1>
+                    <p> Confía en nosotros para obtener soluciones confiables y eficientes en el mundo de la tecnología.
+                    </p>
                 </div>
             </div>
         </div>
@@ -54,7 +49,7 @@
     <section class="wrapper" id="about">
         <div class="container">
             <div class="row">
-                <div class="col text-center mb-5" data-aos="fade-down-right">
+                <div class="col text-center mb-5" data-aos="fade-down-right" id="contentabout">
                     <h2 class="display-4">Nuestros Servicios</h2>
                     <p class="lead">
                         Nos comprometemos a proporcionar servicios confiables y de calidad para cubrir todas tus
@@ -67,7 +62,7 @@
                     <div class="card text-white card-has-bg click-col"
                         style="background-image:url('images/seniorReparando.webp');">
                         <img class="card-img d-none" src="images/seniorReparando.webp"
-                            alt="Adulto reparando una tarjeta madre.">
+                            alt="Adulto reparando una tarjeta madre." loading="lazy">
                         <div class="card-img-overlay d-flex flex-column">
                             <div class="card-body">
                                 <h2 class="card-title mt-0 "><a class="text-white" herf="#">Reparación de
@@ -78,6 +73,8 @@
                                     para solucionar cualquier problema técnico y mantener tus dispositivos en óptimas
                                     condiciones de funcionamiento.
                                 </p>
+                                <a href="inforeparacion.html"
+                                    class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round btnest">Ver mas</a>
                             </div>
                         </div>
                     </div>
@@ -85,7 +82,7 @@
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-4" data-aos="fade-down">
                     <div class="card text-white card-has-bg click-col"
                         style="background-image:url('images/accesorios.webp');">
-                        <img class="card-img d-none" src="images/accesorios.webp" alt="Accesorios para computadoras.">
+                        <img class="card-img d-none" src="images/accesorios.webp" alt="Accesorios para computadoras." loading="lazy">
                         <div class="card-img-overlay d-flex flex-column">
                             <div class="card-body">
                                 <h2 class="card-title mt-0 "><a class="text-white" herf="#">Venta de computadoras y
@@ -96,6 +93,8 @@
                                     satisfacer tus necesidades tecnológicas. Ya sea que necesites un equipo nuevo o
                                     componentes adicionales, tenemos lo que buscas.
                                 </p>
+                                <a href="infoventa.html"
+                                    class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round btnest">Ver mas</a>
                             </div>
                         </div>
                     </div>
@@ -103,7 +102,7 @@
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-4" data-aos="fade-down">
                     <div class="card text-white card-has-bg click-col"
                         style="background-image:url('images/consola.webp');">
-                        <img class="card-img d-none" src="images/consola.webp" alt="Consola de videojuegos.">
+                        <img class="card-img d-none" src="images/consola.webp" alt="Consola de videojuegos." loading="lazy">
                         <div class="card-img-overlay d-flex flex-column">
                             <div class="card-body">
                                 <h2 class="card-title mt-0 "><a class="text-white" herf="#">Reparación y configuración
@@ -114,6 +113,8 @@
                                     para otros dispositivos electrónicos, como tablets, smartphones y consolas de
                                     videojuegos.
                                 </p>
+                                <a href="infoelectronica.html"
+                                    class="btn mb-2 mb-md-0 btn-secondary btn-block btn-round btnest">Ver mas</a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +142,8 @@
                     <div class="card py-4 px-lg-5 h-100">
                         <div class="card-body d-flex flex-column">
                             <div class="text-center">
-                                <img src="images/servicio-basico_1.webp" class="img-fluid  mb-5" alt="Computadora basica">
+                                <img src="images/servicio-basico_1.webp" class="img-fluid  mb-5"
+                                    alt="Computadora basica" loading="lazy">
                             </div>
                             <div class="card-title mb-4 text-center fs-2">Servicios Básicos:</div>
                             <div class="pricing">
@@ -168,7 +170,7 @@
                         <div class="card-body d-flex flex-column">
                             <div class="text-center">
                                 <img src="images/servicio-avanzados_1.webp" class="img-fluid  mb-5"
-                                    alt="Computadora Avanzada">
+                                    alt="Computadora Avanzada" loading="lazy">
                             </div>
                             <div class="card-title mb-4 text-center fs-2">Servicios Avanzados:</div>
                             <div class="pricing">
@@ -194,7 +196,8 @@
                     <div class="card py-4 px-lg-5 h-100">
                         <div class="card-body d-flex flex-column">
                             <div class="text-center">
-                                <img src="images/servicio-premium_1.webp" class="img-fluid  mb-5" alt="Computadora Premum">
+                                <img src="images/servicio-premium_1.webp" class="img-fluid  mb-5"
+                                    alt="Computadora Premum" loading="lazy">
                             </div>
                             <div class="card-title mb-4 text-center fs-2">Servicios Premium:</div>
                             <div class="pricing">
@@ -358,6 +361,9 @@
     <footer class="bg-dark text-center text-white footer">
 
         <!-- Copyright -->
+        <div>
+            <a class="text-white" href="politicas.html">Politicas de Privacidad</a>
+        </div>
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2023 Copyright:
             <a class="text-white" href="#">TechFix.net</a>
@@ -380,6 +386,11 @@
 
 
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 

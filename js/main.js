@@ -26,49 +26,6 @@ $(document).ready(function () {
     }
   });
 
-  const textArray = [
-    "Reparación y Venta de Computadoras y Equipo Electrónico",
-  ];
-  let textIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-
-  function type() {
-    const currentText = textArray[textIndex];
-    if (isDeleting) {
-      // Eliminando caracteres
-      $('.home h1').text(currentText.substring(0, charIndex - 1));
-      charIndex--;
-    } else {
-      // Agregando caracteres
-      $('.home h1').text(currentText.substring(0, charIndex + 1));
-      charIndex++;
-    }
-
-    // Controla la velocidad de escritura y eliminación
-    let typingSpeed = 2; // Velocidad en milisegundos
-
-    if (!isDeleting && charIndex === currentText.length) {
-      // Finalizó de escribir la palabra
-      isDeleting = true;
-      typingSpeed = 1000; // Pausa antes de eliminar el texto
-    } else if (isDeleting && charIndex === 0) {
-      // Finalizó de eliminar el texto
-      isDeleting = false;
-      textIndex++;
-      typingSpeed = 500; // Pausa antes de escribir la siguiente palabra
-      if (textIndex === textArray.length) {
-        // Reinicia el ciclo de escritura
-        textIndex = 0;
-      }
-    }
-
-    setTimeout(type, typingSpeed);
-  }
-
-  // Inicia la máquina de escribir cuando se carga la página
-  type();
-  
   const time = () => {
 
     const activerow = document.querySelector('#activerow');
@@ -129,8 +86,8 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function() {
-  $('form').submit(function(event) {
+$(document).ready(function () {
+  $('form').submit(function (event) {
     event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
 
     // Obtén los valores de los campos de entrada
@@ -143,17 +100,42 @@ $(document).ready(function() {
 
     // Crea el mensaje de éxito
     var mensajeExitoso = 'El correo electrónico fue enviado correctamente.\n\n' +
-                         'Email: ' + email + '\n' +
-                         'Nombre: ' + nombre + '\n' +
-                         'Consulta: ' + consulta;
+      'Email: ' + email + '\n' +
+      'Nombre: ' + nombre + '\n' +
+      'Consulta: ' + consulta;
 
     // Muestra el mensaje de éxito
-    alert(mensajeExitoso);  
-    
+    alert(mensajeExitoso);
+
     // Limpia los campos de texto
     email, nombre, consulta = '';
     $('#email').val('');
     $('#nombre').val('');
     $('#consulta').val('');
   });
+});
+
+$(document).ready(function () {
+  function toggleVideoVisibility() {
+    var videoSection = $("#home");
+    var video = $("#video-background");
+
+    if (videoSection.length && video.length) {
+      var scrollTop = $(window).scrollTop();
+      var sectionTop = videoSection.offset().top;
+      var sectionHeight = videoSection.height();
+
+      if (scrollTop > sectionTop + sectionHeight || scrollTop < sectionTop) {
+        video.hide();
+      } else {
+        video.show();
+      }
+    }
+  }
+
+  // Ejecutar la función al cargar la página y al hacer scroll
+  toggleVideoVisibility();
+  $(window).scroll(toggleVideoVisibility);
+
+  
 });
