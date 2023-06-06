@@ -890,6 +890,13 @@ header .fa-times {
 
 }
 
+@media (max-width:767px) {
+  .home .homevideo {
+    display: none;
+  }
+}
+
+
 .breadcrumbs {
   padding: 15px 0;
   background: #f3f5fa;
